@@ -16,7 +16,6 @@ const ContactForm: React.FC = () => {
       
       <div className="absolute top-0 left-0 w-full h-full bg-[url('/path-to-your-uploaded-image.png')] bg-cover bg-no-repeat opacity-50"></div>
 
-      {/* Contact Form */}
       <div className="relative z-10 flex items-center justify-center min-h-screen">
         <div className="bg-white text-[#3d155f] p-8 rounded-lg shadow-lg w-full max-w-3xl">
           <h2 className="text-4xl font-extrabold text-[#4831d4] mb-4">Send me a message!</h2>
