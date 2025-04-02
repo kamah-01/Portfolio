@@ -5,17 +5,50 @@ const ContactForm: React.FC = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert("Message sent!");
-    
+  
+    const formData = {
+      name,
+      email,
+      message,
+    };
+  
+    try {
+      
+      const response = await fetch('https://backend-portfolio-vp1z.onrender.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });  
+      
+      const result = await response.json();
+  
+      if (response.ok) {
+        
+        alert(result.message); 
+        setName('');
+        setEmail('');
+        setMessage('');
+      } else {
+        
+        alert('Error: ' + result.message);  
+      }
+    } catch (error) {
+      console.error('Error sending email:', error);
+      alert('Failed to send message. Please try again later.');
+    }
   };
-
+  
+  
+  
   return (
     <div className="relative min-h-screen bg-[#F9F9F9] p-8">
-      
       <div className="absolute top-0 left-0 w-full h-full bg-[url('/path-to-your-uploaded-image.png')] bg-cover bg-no-repeat opacity-50"></div>
-
+      
       <div className="relative z-10 flex items-center justify-center min-h-screen">
         <div className="bg-white text-[#3d155f] p-8 rounded-lg shadow-lg w-full max-w-3xl">
           <h2 className="text-4xl font-extrabold text-[#4831d4] mb-4">Send me a message!</h2>
