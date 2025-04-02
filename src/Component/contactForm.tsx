@@ -17,7 +17,7 @@ const ContactForm: React.FC = () => {
   
     try {
       
-      const response = await fetch('https://backend-portfolio-vp1z.onrender.com', {
+      const response = await fetch('https://backend-portfolio-vp1z.onrender.com/send-email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
