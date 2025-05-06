@@ -15,7 +15,7 @@ const Home: React.FC = () => {
           <div className="text-start">
             <h1 className="text-6xl font-extrabold pb-8">Full-Stack Developer.</h1>
             <p className="text-lg mb-6">
-              I like to craft solid and scalable frontend products <br /> with great
+              I love craftin solid software products with <br /> great
               user experiences.
             </p>
             <div className="grid grid-cols-2 gap-8 text-base text-white">
